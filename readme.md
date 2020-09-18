@@ -1,5 +1,3 @@
-# API 164 RAF SQUADRON
-
 ## About the 164 Argentine-British Squadron
 ![Screenshot](https://i.imgur.com/lFM8ENV.jpg)
 
