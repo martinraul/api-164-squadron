@@ -27,7 +27,7 @@ app.get("/pilotList", (req, res) => {
   });
 });
 
-app.get("/pilot/:id", (req, res) => {
+app.get("/pilotList/:id", (req, res) => {
   const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
   const pilots = JSON.parse(jsonPilots);
 
@@ -63,7 +63,7 @@ app.get("/pilots", (req, res, next) => {
   return res.send(jsonPilots);
 });
 
-app.get("/pilots/:number", (req, res) => {
+app.get("/pilots/perpage/:number", (req, res) => {
   const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
   const pilots = JSON.parse(jsonPilots);
 
