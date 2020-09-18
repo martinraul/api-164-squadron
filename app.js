@@ -17,7 +17,7 @@ app.use(express.static(`public`));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/pilots", (req, res) => {
+app.get("/pilotList", (req, res) => {
   const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
   const pilots = JSON.parse(jsonPilots);
 
