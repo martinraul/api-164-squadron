@@ -1,0 +1,24 @@
+<div class="container is-fluid">
+  <table class="table is-narrow is-striped  ">
+    <thead>
+      <tr>
+        <th>Pilots⬇</th>
+        <th>Rank</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    {{#each pilots as |pilot|}}
+    <tr>
+      <td>
+        {{pilot.name}}
+      </td>
+      <td>
+        {{pilot.rank}}
+      </td>
+      <td>
+        <a class="link has-text-link-dark has-text-weight-semibold " href="/pilot/{{pilot.id}}">+Info</a>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</div>
