@@ -1,13 +1,12 @@
 # API 164 RAF SQUADRON
 
 ## About the 164
-`
-When World War 2 broke out in Europe, over 800 Argentine volunteers, mostly of Anglo-Argentine descent, joined the British and Canadian Air Forces, many of them served in the 164 Argentine-British RAF squadron. The 164 saw action first over the English Channel and then over Europe. Around 150 of them were killed and many taken prisoners.
+`When World War 2 broke out in Europe, over 800 Argentine volunteers, mostly of Anglo-Argentine descent, joined the British and Canadian Air Forces, many of them served in the 164 Argentine-British RAF squadron. The 164 saw action first over the English Channel and then over Europe. Around 150 of them were killed and many taken prisoners.`
 
-These men stories remained untold for a number of reasons, but partly because after the war the pilots scattered, some staying in Europe, some going home and others emigrating. 
+`These men stories remained untold for a number of reasons, but partly because after the war the pilots scattered, some staying in Europe, some going home and others emigrating. `
 
-Based on public records, i built this little project to help keep alive the memory of these people, and preserve the record of service and the achievements of the 164.
-`
+`Based on public records, i built this little project to help keep alive the memory of these people, and preserve the record of service and the achievements of the 164.`
+
 
 ## Built with
 * [Node.js](https://nodejs.org/)
