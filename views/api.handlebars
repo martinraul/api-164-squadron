@@ -1,99 +1,101 @@
-
-<div class='container has-text-left'>
-    <div class='columns is-mobile is-centered'>
-        <div class='column is-10 '>
-            <div class='box'>
-                <h4 class="title is-4">API Information</h4>
-                <div class="columns is-vcentered  has-background-danger-light">
-                    <div class="column ">
-                        <img class="image container is-256x256" src="/img/logo.jpg" alt="">
-                    </div>
-                    <div class="column  is-three-quarters ">
-                        <p>
-                            This API is a free service based in historical records
-                            about the WW2 "164 Raf Squadron" of Argentine volunteers. All data was published by the <a
-                                class="has-text-link-dark has-text-weight-semibold "
-                                href="http://www.abcc.com.ar/memorial">"ARGENTINE-BRITISH COMUNITY
-                                COUNCIL"</a>. <br>
-                            <br>
-                            This is a consumption-only API, only the HTTP GET method is available on resources.
-                            No authentication is required to access this API, and all resources are fully open and
-                            available.
-                        </p>
-                    </div>
-                </div>
-                <br>
-                <h4 class="title is-4">Usage</h4>
+<section class="hero is-info">
+    <div class="hero-body ">
+        <div class="container has-text-centered">
+            <h1 class="title">
+                API Information </h1>
+            <h2 class="subtitle">
                 <p>
-                    Get the complete pilot list:
-                <div class="box has-background-danger-light ">
-                    <p class="is-family-secondary has-text-link-dark is-size-6"> <strong
-                            class="has-text-danger">GET</strong> <a class="has-text-link-dark"
-                            href="https://api-164-squadron.herokuapp.com/pilots">https://api-164-squadron.herokuapp.com/pilots</a>
-                    </p>
-                </div>
-              <p>  And you will get:</p>
-                <div class="columns is-mobile is-centered">
-                    <table class="table is narrow is-centered is-size-6 ">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                        <tr>
-                            <td>id</td>
-                            <td>The identifier for this pilot</td>
-                            <td>integer</td>
-                        </tr>
-                        <tr>
-                            <td>name</td>
-                            <td>Surname and Name of the pilot
-                            </td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>rank</td>
-                            <td>Highest Rank of the pilot
-                            </td>
-                            <td>string</td>
-                        </tr>
-                        <td>unit</td>
-                        <td>Last know unit of the pilot
-                        </td>
-                        <td>string</td>
-                        </tr>
-                        </tr>
-                        <td>comment</td>
-                        <td>Brief about the pilot
-                        </td>
-                        <td>string</td>
-                        </tr>
-                        <td>link</td>
-                        <td> If KIA, the links show where they RIP
-                            </p>
-                        </td>
-                        <td>string</td>
-                        </tr>
-                    </table>
-                </div>
-                Get single pilot by id:
-                <div class="box has-background-danger-light">
-                    <p class="is-family-secondary has-text-link-dark is-size-6"><strong class="has-text-danger">GET
-                        </strong><a class="has-text-link-dark" href="https://api-164-squadron.herokuapp.com/pilots/1">https://api-164-squadron.herokuapp.com//pilots/{id-number}</a>
-                    </p>
-                </div>
-                Get paginated list:
-                <div class="box has-background-danger-light">
-                    <p class=" is-family-secondary  "><strong class="has-text-danger">GET </strong><a
-                          class="has-text-link-dark"  href="https://api-164-squadron.herokuapp.com/pilots/perpage/20">https://api-164-squadron.herokuapp.com/pilots/perpage/{number} </a>
-                    </p>
-                </div>
-                By default, a list "page" will contain up to 20 resources. If you would like to change this just change
-                the number to the GET request, e.g. /pilots/40
+                    This API is a free service based in historical records
+                    about the WW2 "164 Raf Squadron" of Argentine volunteers. All data was published by the <a
+                        class="has-text-link-dark has-text-weight-semibold "
+                        href="http://www.abcc.com.ar/memorial">"ARGENTINE-BRITISH COMUNITY
+                        COUNCIL"</a>. <br>
+                    <br>
+                    This is a consumption-only API, only the HTTP GET method is available on resources.
+                    No authentication is required to access this API, and all resources are fully open and
+                    available.
+                </p>
+        </div>
+        </h2>
+    </div>
+</section>
+<div class='columns is-mobile is-centered'>
+    <div class='column is-10 '>
+        <div class='box'>
+            <h4 class="title is-4 has-text-centered	">Usage</h4>
+            <p>
+                Get the complete pilot list:
+            <div class="box has-background-danger-light ">
+                <p class="is-family-secondary has-text-link-dark is-size-6"> <strong
+                        class="has-text-danger">GET</strong> <a class="has-text-link-dark"
+                        href="https://api-164-squadron.herokuapp.com/pilots">https://api-164-squadron.herokuapp.com/pilots</a>
                 </p>
             </div>
-            <p>
+            <p> And you will get:</p>
+            <div class="columns is-mobile is-centered">
+                <table class="table is narrow is-centered is-size-6 ">
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>The identifier for this pilot</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>Surname and Name of the pilot
+                        </td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>rank</td>
+                        <td>Highest Rank of the pilot
+                        </td>
+                        <td>string</td>
+                    </tr>
+                    <td>unit</td>
+                    <td>Last know unit of the pilot
+                    </td>
+                    <td>string</td>
+                    </tr>
+                    </tr>
+                    <td>comment</td>
+                    <td>Brief about the pilot
+                    </td>
+                    <td>string</td>
+                    </tr>
+                    <td>link</td>
+                    <td> If KIA, the links show where they RIP
+                        </p>
+                    </td>
+                    <td>string</td>
+                    </tr>
+                </table>
+            </div>
+            Get single pilot by id:
+            <div class="box has-background-danger-light">
+                <p class="is-family-secondary has-text-link-dark is-size-6"><strong class="has-text-danger">GET
+                    </strong><a class="has-text-link-dark"
+                        href="https://api-164-squadron.herokuapp.com/pilots/1">https://api-164-squadron.herokuapp.com//pilots/{id-number}</a>
+                </p>
+            </div>
+            Get paginated list:
+            <div class="box has-background-danger-light">
+                <p class=" is-family-secondary  "><strong class="has-text-danger">GET </strong><a
+                        class="has-text-link-dark"
+                        href="https://api-164-squadron.herokuapp.com/pilots/perpage/20">https://api-164-squadron.herokuapp.com/pilots/perpage/{number}
+                    </a>
+                </p>
+            </div>
+            By default, a list "page" will contain up to 20 resources. If you would like to change this just change
+            the number to the GET request, e.g. /pilots/40
+            </p>
         </div>
+        <p>
     </div>
+</div>
 </div>
 </div>
