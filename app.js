@@ -89,7 +89,6 @@ app.get("/pilots/:id", (req, res, next) => {
   const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
   const pilots = JSON.parse(jsonPilots);
 
-  console.log(pilots[`${req.params.id}`]);
   return res.send(pilots[req.params.id]);
 });
 
