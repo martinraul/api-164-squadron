@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const exphbs = require("express-handlebars");
-const fs = require("fs");
 
 const app = express();
 const hbs = exphbs.create();
@@ -17,9 +16,12 @@ app.use(express.static(`public`));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const service = require("./services/storage.js");
+const getPilots = service.getPilots;
+const getSinglePilot = service.getSinglePilot;
+
 app.get("/pilotList", (req, res) => {
-  const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
-  const pilots = JSON.parse(jsonPilots);
+  const pilots = getPilots();
 
   res.render("home", {
     layout: "layout",
@@ -28,15 +30,7 @@ app.get("/pilotList", (req, res) => {
 });
 
 app.get("/pilotList/:id", (req, res) => {
-  const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
-  const pilots = JSON.parse(jsonPilots);
-
-  let singlePilot;
-  for (let i = 0; i < pilots.length; i++) {
-    if (Number(pilots[i].id) === Number(req.params.id)) {
-      singlePilot = pilots[i];
-    }
-  }
+  const singlePilot = getSinglePilot(req.params.id);
 
   res.render("pilot", {
     layout: "layout",
@@ -56,16 +50,21 @@ app.get("/", (req, res) => {
   });
 });
 
-/*-----------API STARTS HERE---------*/
+/*-----------API STARTS HERE--------
+-------------------------------------*/
 
 app.get("/pilots", (req, res, next) => {
-  const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
-  return res.send(jsonPilots);
+  const pilots = getPilots();
+  return res.send(pilots);
+});
+
+app.get("/pilots/:id", (req, res, next) => {
+  const singlePilot = getSinglePilot(req.params.id);
+  return res.send(singlePilot);
 });
 
 app.get("/pilots/perpage/:number", (req, res) => {
-  const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
-  const pilots = JSON.parse(jsonPilots);
+  const pilots = getPilots();
 
   const pageCount = Math.ceil(pilots.length / `${req.params.number}`);
   let page = parseInt(req.query.p);
@@ -84,14 +83,6 @@ app.get("/pilots/perpage/:number", (req, res) => {
     ),
   });
 });
-
-app.get("/pilots/:id", (req, res, next) => {
-  const jsonPilots = fs.readFileSync("./data/pilots.json", "utf-8");
-  const pilots = JSON.parse(jsonPilots);
-
-  return res.send(pilots[req.params.id]);
-});
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
