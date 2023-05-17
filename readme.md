@@ -14,7 +14,7 @@
 * [Handlebars](https://handlebarsjs.com/)
 
 ## Working Link
-https://api-164-squadron.herokuapp.com/
+https://api-164-squadron.onrender.com/
 
 ## Install
 Download and unzip code dir.  
