@@ -29,6 +29,10 @@ const viewRoutes = require('./routes/views');
 app.use('/', viewRoutes);
 app.use('/', apiRoutes);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+if (!module.parent) {
+  app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
