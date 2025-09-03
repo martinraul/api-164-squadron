@@ -16,6 +16,9 @@ app.use(express.static(`public`));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const pjson = require('./package.json');
+app.locals.version = pjson.version;
+
 const service = require("./services/sqlite.js");
 service.createTable();
 service.loadData();
