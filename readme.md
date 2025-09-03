@@ -12,6 +12,7 @@
 * [Node.js](https://nodejs.org/)
 * [Express](https://expressjs.com/)
 * [Handlebars](https://handlebarsjs.com/)
+* [SQLite](https://www.sqlite.org/)
 
 ## Working Link
 https://api-164-squadron.onrender.com/
